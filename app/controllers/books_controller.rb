@@ -17,7 +17,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to book_path(@book), notice: "You have created book successfully."
     else
-      flash.now[:notice] = "error. book was not created."
+      flash.now[:notice] = "error. title and body can't be blank."
       @books = Book.all
       render 'index'
     end
@@ -40,7 +40,7 @@ class BooksController < ApplicationController
 
   def destroy
     @book = Book.find(params[:id])
-    @book.destoy
+    @book.destroy
     redirect_to books_path
   end
 
