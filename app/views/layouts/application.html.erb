@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
+
+
     <title>Bookers2Ver2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,9 +13,11 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-      <main>
+
         <p id="notice"><%= notice %></p>
-      </main>
+
+        <%= yield %>
+
     <%= render 'layouts/footer' %>
   </body>
 </html>
