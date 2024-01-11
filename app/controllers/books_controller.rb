@@ -9,6 +9,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+    @book = Book.find(params[book_params]) #--パーシャルに渡す変数--
   end
 
   def create
@@ -47,7 +48,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :body)
+    params.require(:book).permit(:title, :body, :book_id)
   end
   def is_matching_login_user
     user = Book.find(params[:id])

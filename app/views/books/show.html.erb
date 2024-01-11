@@ -23,6 +23,7 @@
             <% if @book.user == current_user %>
               <td><%= link_to 'Destroy', @book, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger"%></td>
             <% end %>
+
         </tr>
       </table>
     </div>
