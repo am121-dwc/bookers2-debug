@@ -13,27 +13,24 @@
   <div class="row justify-content-center">
     <div class="col-lg-4 col-sm-3 col-2"></div>
     <div class="col-lg-4 col-sm-6 col-8">
-
-        <%= link_to new_user_session_path, class: 'text-decoration-none' do %>
-      <button class="btn btn-info btn-block">
-        Log in
-      </button>
-
-        <% end %>
+      <%= link_to "Log in",  new_user_session_path , class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
+      <!--<%#= link_to new_user_session_path, class: 'text-decoration-none' do %>-->
+      <!--<button class="btn btn-info btn-block">Log in</button>-->
+      <!--<%# end %>-->
     </div>
     <div class="col-lg-4 col-sm-3 col-2"></div>
   </div>
     <div class="row justify-content-center">
       <div class="col-lg-4 col-sm-3 col-2"></div>
       <div class="col-lg-4 col-sm-6 col-8">
+        <%= link_to "Sign up", new_user_registration_path , class: "btn btn-success btn-sm btn-block mb-3 sign_up" %>
+        <!--<%#= link_to new_user_registration_path, class: 'text-decoration-none' do %>-->
+        <!--<button class="btn btn-success btn-block mt-3">-->
+        <!--Sign up-->
+        <!--</button>-->
 
-          <%= link_to new_user_registration_path, class: 'text-decoration-none' do %>
-        <button class="btn btn-success btn-block mt-3">
-          Sign up
-        </button>
 
-
-        <% end %>
+        <!--<%# end %>-->
       </div>
       <div class="col-lg-4 col-sm-3 col-2"></div>
     </div>
