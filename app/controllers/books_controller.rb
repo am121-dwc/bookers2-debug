@@ -9,7 +9,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
-    @book = Book.find(params[book_params]) #--パーシャルに渡す変数--
+
   end
 
   def create

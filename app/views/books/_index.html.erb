@@ -10,7 +10,7 @@
   <tbody>
     <% books.each do |book| %>
       <tr>
-        <td><%= link_to(book.user) do %>
+        <td><%= link_to (book.user) do %>
           <%= image_tag book.user.get_profile_image, size:'50x50' %>
           <% end %>
         </td>
@@ -22,17 +22,18 @@
 
           <p>
             <%= link_to book_favorite_path(book), method: :delete do %>
-              ♥<%= book.favorites.count %>いいね
+              <i class="fa-solid fa-heart text-danger"><%= book.favorites.count %></i>
             <% end %>
           </p>
           <% else %>
           <p>
             <%= link_to book_favorite_path(book), method: :post do %>
-              ♡<%= book.favorites.count %>いいね
+              <i class="fa-solid fa-heart text-primary"><%= book.favorites.count %></i>
             <% end %>
           </p>
             <% end %>
         </td>
+
       </tr>
     <% end %>
   </tbody>
