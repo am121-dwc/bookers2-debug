@@ -7,15 +7,20 @@ class User < ApplicationRecord
   has_many :books
   has_many :book_comments, dependent: :destroy
   has_one_attached :profile_image
-
+  # --フォロー・フォロワー機能--
   has_many :followers, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :following_users, through: :followers, source: :followed
 
   has_many :followeds, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :follower_users, through: :followeds, source: :follower
-
+  # --グループ機能--
   has_many :group_users, dependent: :destroy
   has_many :groups, through: :group_users
+
+  # --DM機能--
+  has_many :user_rooms, dependent: :destroy
+  has_many :chats, dependent: :destroy
+  has_many :rooms, dependent: :destroy
 
   validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
 
