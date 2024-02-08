@@ -1,4 +1,5 @@
 class ChatsController < ApplicationController
+  before_action :block_non_related_users, only: [:show]
   def show
     @user = User.find(params[:id])
     rooms = current_user.user_rooms.pluck(:room_id)
@@ -29,7 +30,6 @@ class ChatsController < ApplicationController
   end
   def block_non_related_users
     user = User.find(params[:id])
-    # --↓メソッド名注意--
     unless current_user.following?(user) && user.following?(current_user)
       redirect_to books_path
     end

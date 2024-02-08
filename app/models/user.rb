@@ -20,7 +20,7 @@ class User < ApplicationRecord
   # --DM機能--
   has_many :user_rooms, dependent: :destroy
   has_many :chats, dependent: :destroy
-  has_many :rooms, dependent: :destroy
+  has_many :rooms, through: :user_rooms
 
   validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
 
