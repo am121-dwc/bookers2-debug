@@ -6,6 +6,9 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @book_comment = BookComment.new
+    # --閲覧数カウント機能--
+    @book = Book.find(params[:id])
+    @book.increment!(:view_count)
   end
 
   def index
