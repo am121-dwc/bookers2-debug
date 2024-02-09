@@ -17,7 +17,7 @@ class ChatsController < ApplicationController
   end
   def create
     @chat = current_user.chats.new(chat_params)
-    render :validate unless @chat.save
+    render :validater unless @chat.save
   end
   # --DM削除機能--
   # def destroy
